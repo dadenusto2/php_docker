@@ -29,7 +29,6 @@
 </script>
 
 <?php
-$mysqli = new mysqli('10.101.16.19:3306', 'hizhniyeg', 'KLJf$4d2s', 'sitemanager');
 $result = $mysqli->query("select DISTINCT date_format(date_discon, '%d.%m.%Y') as date_discon, city, town, company_name, way, Replace(consumer_name, ';', concat(';', '<br>')) as consumer_name, Replace(adress, ';', concat(';', '<br>')) as adress,time_discon, reason from disconnections where city = 'Краснодар' order by date_format(date_discon,'%Y-%m-%d'), time_discon, adress limit 5");
   foreach ($result as $row1)
     {
